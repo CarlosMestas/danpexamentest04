@@ -1,1 +1,1 @@
-web: gunicorn danpexamentest04.wsgi
+web: gunicorn danpexamen.wsgi
