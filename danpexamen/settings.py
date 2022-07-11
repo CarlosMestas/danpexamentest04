@@ -78,10 +78,10 @@ WSGI_APPLICATION = 'danpexamen.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': '',
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
+        'NAME': 'd8pkh6t154387o',
+        'USER': 'ezqzhwsjgmtvug',
+        'PASSWORD': 'd2fecba2c39d1fcba13b1ab680c450843cb5f07a9025fafab7533e818d7f9452',
+        'HOST': 'ec2-52-20-166-21.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
