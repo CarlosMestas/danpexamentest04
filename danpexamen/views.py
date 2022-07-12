@@ -5,17 +5,14 @@ from django.http import HttpResponse
 
 def notification_view(request):
     context = {}
-    if request.method == 'POST':
-        push_notification(context['title'], context['text'])
-    else:
-        context['form'] = InputForm()
-        return render(request, "notification.html", context)
+    context['form'] = InputForm()
+    return render(request, "notification.html", context)
 
 
 def home(request):
     return HttpResponse('Hello World')
 
-def push_notification(title, text):
+def push_notification(request):
     from pusher_push_notifications import PushNotifications
     pn_client = PushNotifications(
         instance_id='b6dd6a14-bd22-4988-9af4-0e17301cd078',
@@ -32,8 +29,8 @@ def push_notification(title, text):
             },
             'fcm': {
                 'notification': {
-                    'title': str(title),
-                    'body': str(text)
+                    'title': str(request.POST.get('title')),
+                    'body': str(request.POST.get('text'))
                 }
             }
         }
