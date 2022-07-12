@@ -29,4 +29,5 @@ router.register('devices', FCMDeviceAuthorizedViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('push/', views.notification_view),
+    path(' ', views.home)
 ]
