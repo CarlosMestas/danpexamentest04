@@ -36,3 +36,4 @@ def push_notification(request):
     )
 
     print(response['publishId'])
+    return HttpResponse('Notificación enviada')
