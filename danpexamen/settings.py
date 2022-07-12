@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'fcm_django'
 ]
 
 MIDDLEWARE = [
@@ -128,3 +130,11 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+FCM_DJANGO_SETTINGS = {
+     # default: _('FCM Django')
+    "APP_VERBOSE_NAME": "My App",
+    "FCM_SERVER_KEY": " AAAA-hDvax4:APA91bFmQVGhzEvJrypKARquAq8V6oQtf6M8DckiOvmQieTJzA0zf38T3VHigOlFvh8mrC61OqU_JB8uwU8Uy_JHqMQbzAFBXjW0f44zDuC_epSylhmAFz_cGZVMOiQLCbNHx8ssvg7f",
+    "ONE_DEVICE_PER_USER": False,
+    "DELETE_INACTIVE_DEVICES": True
+}

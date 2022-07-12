@@ -14,7 +14,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.db import router
 from django.urls import path
+from rest_framework import routers
+from fcm_django.api.rest_framework import FCMDeviceAuthorizedViewSet
+
+router = routers.DefaultRouter()
+router.register('devices', FCMDeviceAuthorizedViewSet)
+
+'localhost:8000/api'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
