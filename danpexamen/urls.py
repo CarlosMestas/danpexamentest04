@@ -18,6 +18,8 @@ from django.db import router
 from django.urls import path
 from rest_framework import routers
 from fcm_django.api.rest_framework import FCMDeviceAuthorizedViewSet
+from danpexamen import notification
+from . import views
 
 router = routers.DefaultRouter()
 router.register('devices', FCMDeviceAuthorizedViewSet)
@@ -26,4 +28,5 @@ router.register('devices', FCMDeviceAuthorizedViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('push/', views.notification_view),
 ]
