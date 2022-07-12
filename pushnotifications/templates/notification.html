@@ -1,33 +1,48 @@
-<html>
+<html lang="es">
 
 <head>
-    <link
-     rel="stylesheet"
-     href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <style>
-        .i-am-centered {
-            margin: auto;
-            max-width: 300px;
-            padding-top: 20%;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="form.css">
+
 </head>
 
-<body>
-    <div class="i-am-centered">
-        <form method="POST" action="/push_notification/">
-            {% csrf_token %}
-            <div class="form-group">
-                <label>Título </label>
-                {{ form.title }}
+ <body>
+
+        <div id="contenedor">
+
+            <div id="contenedorcentrado">
+                <div id="login">
+                    <form id="loginform" method="POST" action="/push_notification/">
+                        {% csrf_token %}
+
+                        <label>Título </label>
+                        {{ form.title }}
+
+                        <label>Info </label>
+                        {{ form.text }}
+
+                        <button type="submit" class="btn btn-primary">Enviar notificación</button>
+                    </form>
+
+                </div>
+                <div id="derecho">
+                    <div class="titulo">
+                        Bienvenido
+                    </div>
+                    <hr>
+                    <div class="pie-form">
+                        <p>Simulador de servicio: Envio de notifiaciones a tu aplicación al detectar accidentes de tránsito:</p>
+                        <hr>
+                        <p>Hecho por:</p>
+                        <ol>
+                            <li>Angles Quiroz, Ana Lucia</li>
+                            <li>Mestas Escarcena, Carlos Alberto</li>
+                            <li>Quispe Yncarroque, Maribel Araceli</li>
+                          </ol>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label>Info </label>
-                {{ form.text }}
-            </div>
-            <button type="submit" class="btn btn-primary">Enviar notificación</button>
-        </form>
-    </div>
-</body>
+        </div>
+
+    </body>
 
 </html>
